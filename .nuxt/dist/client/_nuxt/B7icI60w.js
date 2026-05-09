@@ -1,0 +1,1 @@
+import{_ as t,o as n,c as r,p as s}from"./D1q9or1m.js";const o={},c={class:"inline-flex items-center rounded-full border border-ink/10 bg-white/60 px-3 py-1 text-xs font-semibold uppercase tracking-[0.14em] text-ink/70"};function a(e,i){return n(),r("span",c,[s(e.$slots,"default")])}const d=t(o,[["render",a]]);export{d as T};

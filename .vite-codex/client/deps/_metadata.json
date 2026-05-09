@@ -1,0 +1,15 @@
+{
+  "hash": "2911ab2a",
+  "configHash": "d2c119c3",
+  "lockfileHash": "66acb0e5",
+  "browserHash": "5609d846",
+  "optimized": {
+    "errx": {
+      "src": "../../../node_modules/errx/dist/index.js",
+      "file": "errx.js",
+      "fileHash": "19079f83",
+      "needsInterop": false
+    }
+  },
+  "chunks": {}
+}
