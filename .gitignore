@@ -1,0 +1,38 @@
+# Nuxt dev/build outputs
+.output
+.data
+.nuxt
+.nitro
+.cache
+dist
+
+# Node dependencies
+node_modules
+node_modules/
+
+#Generated Files
+cardmarket-file/*.csv
+excel_export/*.xlsx
+
+# Logs
+logs
+*.log
+
+# Misc
+.DS_Store
+.fleet
+.idea
+
+# Local env files
+.env
+.env.*
+!.env.example
+package-lock.json
+
+# Service account keys
+*service-account*.json
+*service_account*.json
+*serviceAccount*.json
+*gcp*.json
+*gcs*.json
+jigglycard-cron-server-*.json

@@ -4,15 +4,10 @@
   >
     <div class="mb-6">
       <p class="eyebrow">WhatsApp</p>
-      <h2 class="mt-3 font-serif text-3xl font-medium text-ink">
-        Scrivimi direttamente
-      </h2>
-    </div>
 
-    <div class="rounded-[1.5rem] border border-ink/10 bg-linen/32 p-5">
-      <p class="eyebrow">Messaggio consigliato</p>
-      <p class="mt-3 leading-7 text-ink/72">
-        {{ whatsappMessage }}
+      <p class="mt-5 max-w-3xl text-base leading-8 text-ink/72 sm:text-lg">
+        Contattami direttamente su WhatsApp: puoi chiedere informazioni,
+        raccontarmi cosa cerchi o capire insieme quale proposta fa per te.
       </p>
     </div>
 
