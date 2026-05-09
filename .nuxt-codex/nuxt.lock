@@ -1,9 +1,0 @@
-{
-  "pid": 90111,
-  "startedAt": 1778330723444,
-  "command": "dev",
-  "cwd": "/Users/franccescobuscicchio/Desktop/rituali-creativi-nuxt",
-  "port": 3001,
-  "hostname": "127.0.0.1",
-  "url": "http://127.0.0.1:3001"
-}
