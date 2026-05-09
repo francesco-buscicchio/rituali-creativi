@@ -2,6 +2,9 @@
 .output
 .data
 .nuxt
+.nuxt-codex
+.npm-cache
+.vite-codex/client/deps
 .nitro
 .cache
 dist
