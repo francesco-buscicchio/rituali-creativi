@@ -19,7 +19,16 @@
 
     <section class="section-padding">
       <div class="site-container grid gap-10 lg:grid-cols-[.8fr_1.2fr]">
-        <p class="eyebrow">Perche nasce</p>
+        <div class="space-y-6">
+          <p class="eyebrow">Perche nasce</p>
+          <figure class="overflow-hidden rounded-[2rem] border border-ink/10 shadow-soft">
+            <img
+              src="/images/progetto-perche-nasce-borsa.jpg"
+              alt="Borsa handmade lilla vicino all'acqua"
+              class="aspect-[16/9] w-full object-cover"
+            >
+          </figure>
+        </div>
         <div class="space-y-7 text-lg leading-8 text-ink/72">
           <p>
             Abbiamo perso un po’ l’abitudine a creare solo per il gusto di farlo.

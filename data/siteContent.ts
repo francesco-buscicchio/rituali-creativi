@@ -14,13 +14,13 @@ export const siteContent = {
   ],
   socials: [
     {
-      label: "Instagram Rituali Creativi",
+      label: "Intagram",
       handle: "@ritualicreativi",
       href: "https://www.instagram.com/ritualicreativi",
       icon: "lucide:instagram",
     },
     {
-      label: "TikTok Rituali Creativi",
+      label: "TikTok",
       handle: "@ritualicreativi",
       href: "https://www.tiktok.com/@ritualicreativi",
       icon: "lucide:video",
@@ -57,7 +57,7 @@ export const siteContent = {
     },
     {
       title: "Stare insieme",
-      text: "Poche persone alla volta, per conoscersi con naturalezza e dare spazio a tutte.",
+      text: "Gruppi piccoli, per conoscersi con naturalezza e dare spazio a tutte.",
       icon: "lucide:users-round",
       accent: "powder",
     },
@@ -177,11 +177,6 @@ export const siteContent = {
       question: "Dove si svolgono?",
       answer:
         "Gli spazi vengono comunicati quando il ciclo è in apertura. Puoi scrivere per sapere se c’è una data vicina a te.",
-    },
-    {
-      question: "Quanto costa?",
-      answer:
-        "Il prezzo standard del ciclo è 100€. Per il primo ciclo di lancio il prezzo promozionale è 75€, materiali inclusi.",
     },
     {
       question: "Posso scriverti per capire se fa per me?",

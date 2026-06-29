@@ -8,12 +8,13 @@
           :text="siteContent.creations.intro"
           as="h1"
         />
-        <div class="rounded-[2rem] border border-ink/10 bg-white/58 p-6 shadow-soft sm:p-8">
-          <p class="font-serif text-3xl font-medium leading-tight text-ink">
-            Pochi pezzi, nessuna sovrapproduzione.
-          </p>
-          <p class="mt-4 leading-7 text-ink/68">{{ siteContent.creations.note }}</p>
-        </div>
+        <figure class="overflow-hidden rounded-[2rem] border border-ink/10 bg-white/58 shadow-soft">
+          <img
+            src="/images/creazioni-borse-handmade.jpg"
+            alt="Borse handmade all'uncinetto indossate davanti al mare"
+            class="aspect-[16/10] h-full w-full object-cover object-[50%_42%]"
+          >
+        </figure>
       </div>
     </section>
 

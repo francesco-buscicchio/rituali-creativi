@@ -21,12 +21,19 @@
         </div>
       </div>
 
-      <div class="relative min-h-[340px] lg:min-h-[460px]" aria-label="Composizione tessile astratta">
+      <div class="relative min-h-[340px] lg:min-h-[460px]" aria-label="Dettaglio di borsa e top fatti a mano">
         <div class="absolute left-4 top-8 h-56 w-44 rounded-[2rem] border border-white/70 bg-white/35 shadow-soft backdrop-blur-sm sm:left-12 sm:h-72 sm:w-56" />
         <div class="absolute right-4 top-0 h-64 w-44 rounded-full bg-powder/35 blur-sm sm:right-16 sm:h-80 sm:w-56" />
         <div class="absolute bottom-8 right-8 h-56 w-56 rounded-full bg-sage/35 shadow-soft" />
         <div class="absolute bottom-0 left-1/2 h-44 w-44 -translate-x-1/2 rounded-full border-[18px] border-terracotta/45 bg-cream/45 shadow-soft" />
         <div class="absolute left-1/2 top-1/2 h-64 w-64 -translate-x-1/2 -translate-y-1/2 rounded-full border border-ink/10 bg-white/30 bg-textile shadow-soft backdrop-blur-sm" />
+        <div class="absolute inset-x-0 bottom-4 z-10 mx-auto w-[86%] overflow-hidden rounded-[2rem] border border-white/70 bg-white/30 shadow-soft sm:w-[78%] lg:bottom-8 lg:w-[84%]">
+          <img
+            src="/images/home-hero-borsa-celeste.jpg"
+            alt="Borsa e top celesti fatti a mano"
+            class="aspect-[4/5] w-full object-cover object-[48%_50%] sm:aspect-[5/6]"
+          >
+        </div>
       </div>
     </div>
   </section>
