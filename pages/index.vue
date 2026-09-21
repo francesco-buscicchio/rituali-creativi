@@ -51,7 +51,6 @@
     <SectionValues />
     <SectionSmallGroups />
     <!-- <SectionCourseHighlight /> -->
-    <SectionHandmadePreview />
 
     <CTASection
       eyebrow="Inizia da qui"
@@ -71,7 +70,6 @@ import SectionTitle from "~/components/Atoms/SectionTitle.vue";
 import CTASection from "~/components/Organisms/CTASection.vue";
 import HeroHome from "~/components/Organisms/HeroHome.vue";
 import SectionCourseHighlight from "~/components/Organisms/SectionCourseHighlight.vue";
-import SectionHandmadePreview from "~/components/Organisms/SectionHandmadePreview.vue";
 import SectionSmallGroups from "~/components/Organisms/SectionSmallGroups.vue";
 import SectionValues from "~/components/Organisms/SectionValues.vue";
 import { siteContent } from "~/data/siteContent";

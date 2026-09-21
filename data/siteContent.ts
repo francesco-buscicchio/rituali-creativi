@@ -1,7 +1,7 @@
 export const siteContent = {
   brand: {
     name: "Rituali Creativi",
-    payoff: "Esperienze tessili lente, piccoli gruppi e oggetti fatti a mano.",
+    payoff: "Esperienze tessili",
     footerNote: "Creato con cura, pochi fili alla volta.",
   },
   navigation: [
@@ -14,7 +14,7 @@ export const siteContent = {
   ],
   socials: [
     {
-      label: "Intagram",
+      label: "Instagram",
       handle: "@ritualicreativi",
       href: "https://www.instagram.com/ritualicreativi",
       icon: "lucide:instagram",
@@ -51,7 +51,7 @@ export const siteContent = {
     },
     {
       title: "Creare con le mani",
-      text: "Punti semplici, materiali morbidi e oggetti che prendono forma senza bisogno di dimostrare nulla.",
+      text: "Punti semplici, materiali naturali e oggetti che prendono forma senza bisogno di dimostrare nulla.",
       icon: "lucide:sparkles",
       accent: "terracotta",
     },
@@ -64,9 +64,9 @@ export const siteContent = {
   ],
   smallGroups: {
     title: "Piccoli gruppi, atmosfera intima",
-    text: "Gli incontri sono pensati per 4-5 persone. Questo permette di essere seguite davvero, fare domande, parlare oppure restare in silenzio mentre le mani lavorano.",
+    text: "Gli incontri sono pensati per piccoli gruppi. Questo permette di essere seguite davvero, fare domande, parlare oppure restare in silenzio mentre le mani lavorano.",
     points: [
-      "4-5 persone",
+      "Piccoli gruppi",
       "Ritmo lento",
       "Guida passo passo",
       "Spazio accogliente",
@@ -79,7 +79,7 @@ export const siteContent = {
     standardPrice: "100€",
     launchPrice: "75€",
     duration: "4 incontri",
-    groupSize: "4-5 persone",
+    groupSize: "Piccoli gruppi",
     level: "Principiante, si parte da zero",
     materials: "Materiali inclusi",
     details: [
@@ -102,7 +102,7 @@ export const siteContent = {
     ],
     practicalDetails: [
       { label: "Formato", value: "4 incontri guidati" },
-      { label: "Gruppo", value: "4-5 persone" },
+      { label: "Gruppo", value: "Piccolo" },
       { label: "Livello", value: "Principiante" },
       { label: "Materiali", value: "Inclusi" },
       { label: "Prezzo standard", value: "100€" },
@@ -161,12 +161,12 @@ export const siteContent = {
     {
       question: "I materiali sono inclusi?",
       answer:
-        "Sì, per il primo ciclo sono inclusi filati, strumenti di base e materiali utili per seguire l’esperienza.",
+        "Sì, sono inclusi filato e strumenti di base per realizzare un piccolo progetto.",
     },
     {
       question: "Quante persone ci sono?",
       answer:
-        "I gruppi sono piccoli, di solito 4-5 persone, così ogni partecipante può essere seguita con attenzione.",
+        "I gruppi sono piccoli, così ogni partecipante può essere seguita con attenzione.",
     },
     {
       question: "Quanto dura ogni incontro?",

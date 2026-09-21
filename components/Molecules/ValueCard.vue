@@ -18,9 +18,9 @@ const props = defineProps<{
 
 const iconClasses = computed(() => {
   const classes = {
-    sage: 'bg-sage/25 text-moss',
-    terracotta: 'bg-terracotta/18 text-clay',
-    powder: 'bg-powder/24 text-ink'
+    sage: 'text-moss',
+    terracotta: 'text-clay',
+    powder: 'text-ink'
   }
 
   return classes[props.accent]

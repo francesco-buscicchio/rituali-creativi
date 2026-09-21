@@ -1,26 +1,28 @@
 <template>
   <div>
     <section class="section-padding border-b border-ink/10 bg-linen/34">
-      <div class="site-container grid gap-10 lg:grid-cols-[.95fr_1.05fr] lg:items-end">
+      <div class="site-container grid gap-10 lg:grid-cols-[.95fr_1.05fr] lg:items-start">
         <SectionTitle
           eyebrow="Il progetto"
-          title="Creativita lenta, senza produttivita forzata."
-          text="Rituali Creativi nasce dal bisogno di uno spazio più semplice, dove fare con le mani diventa anche un modo per ascoltarsi."
+          title="Creatività lenta"
+          text="Rituali Creativi nasce dal bisogno di uno spazio dove fare con le mani diventa anche un modo per ascoltarsi e stare insieme agli altri."
           as="h1"
         />
-        <div class="rounded-[2rem] border border-ink/10 bg-white/58 p-6 leading-8 text-ink/70 shadow-soft sm:p-8">
-          <p>
-            Non è un manifesto rigido e non vuole insegnare un modo giusto di essere creativi.
-            È un invito a togliere un po’ di pressione dal fare.
-          </p>
-        </div>
+        <figure class="overflow-hidden rounded-[2rem] border border-ink/10 shadow-soft">
+          <img
+            src="/hero/DSCF0031.JPG"
+            alt="Top e borsa all’uncinetto azzurri, con il lungomare sullo sfondo"
+            class="aspect-[4/3] w-full object-cover object-[50%_35%] sm:aspect-[16/9]"
+            decoding="async"
+          >
+        </figure>
       </div>
     </section>
 
     <section class="section-padding">
-      <div class="site-container grid gap-10 lg:grid-cols-[.8fr_1.2fr]">
-        <div class="space-y-6">
-          <p class="eyebrow">Perche nasce</p>
+      <div class="site-container">
+        <p class="eyebrow">Perché nasce</p>
+        <div class="mt-6 grid gap-10 lg:grid-cols-[.8fr_1.2fr]">
           <figure class="overflow-hidden rounded-[2rem] border border-ink/10 shadow-soft">
             <img
               src="/images/progetto-perche-nasce-borsa.jpg"
@@ -28,41 +30,46 @@
               class="aspect-[16/9] w-full object-cover"
             >
           </figure>
-        </div>
-        <div class="space-y-7 text-lg leading-8 text-ink/72">
-          <p>
-            Abbiamo perso un po’ l’abitudine a creare solo per il gusto di farlo.
-            Molto spesso anche il tempo libero diventa qualcosa da ottimizzare, mostrare,
-            misurare.
-          </p>
-          <p>
-            Rituali Creativi nasce dal bisogno opposto: uno spazio più umano, in cui
-            lasciarsi andare alla creatività e stare insieme senza pressione.
-          </p>
-          <p>
-            L’uncinetto e le pratiche tessili sono il punto di partenza per ritrovare
-            presenza. Il filo obbliga a rallentare, il punto chiede attenzione, il gruppo
-            ricorda che non siamo fatte per fare tutto da sole.
-          </p>
+          <div class="space-y-7 text-lg leading-8 text-ink/72">
+            <p>
+              Abbiamo perso un po’ l’abitudine a creare solo per il gusto di farlo.
+              Molto spesso anche il tempo libero diventa qualcosa da ottimizzare, mostrare,
+              misurare.
+            </p>
+            <p>
+              Rituali Creativi nasce dal bisogno opposto: uno spazio più umano, in cui
+              lasciarsi andare alla creatività e stare insieme senza pressione.
+            </p>
+            <p>
+              L’uncinetto e le pratiche tessili sono il punto di partenza per ritrovare
+              presenza. Il filo obbliga a rallentare, il punto chiede attenzione, il gruppo
+              ricorda che non siamo fatte per fare tutto da sole.
+            </p>
+          </div>
         </div>
       </div>
     </section>
 
     <section class="section-padding bg-white/38">
       <div class="site-container">
-        <div class="rounded-[2rem] border border-ink/10 bg-cream p-7 shadow-soft sm:p-10 lg:p-12">
-          <p class="eyebrow">Manifesto semplice</p>
-          <div class="mt-6 grid gap-8 lg:grid-cols-[1fr_.9fr] lg:items-center">
-            <h2 class="font-serif text-4xl font-medium leading-tight text-ink text-balance sm:text-5xl">
-              Abbiamo perso un po’ l’abitudine a creare solo per il gusto di farlo.
-            </h2>
-            <p class="text-lg leading-8 text-ink/70">
-              Rituali Creativi nasce dal bisogno di uno spazio più semplice, in cui
-              lasciarsi andare alla creatività e stare insieme, senza pressione. Si può
-              parlare, ascoltare, sbagliare, disfare e ricominciare. Si può anche stare in
-              silenzio, mentre le mani trovano il loro ritmo.
-            </p>
-          </div>
+        <SectionTitle
+          eyebrow="Dal profilo TikTok"
+          title="Possiamo crearlo insieme."
+          align="center"
+        />
+        <TikTokEmbed
+          video-id="7632712972745313558"
+          title="Video TikTok di Rituali Creativi: Possiamo crearlo insieme"
+          class="mx-auto mt-10 w-full max-w-[340px]"
+        />
+        <div class="mt-8 flex justify-center">
+          <ButtonSecondary
+            href="https://www.tiktok.com/@ritualicreativi/video/7632712972745313558"
+            external
+            icon="lucide:arrow-up-right"
+          >
+            Guarda su TikTok
+          </ButtonSecondary>
         </div>
       </div>
     </section>
@@ -78,7 +85,7 @@
         <div class="mt-12 grid gap-5 md:grid-cols-3">
           <InfoCard
             title="Fare"
-            text="Imparare punti e tecniche semplici, con una guida presente e tempi accessibili."
+            text="Imparare punti e tecniche, con una guida presente e tempi accessibili."
             label="01"
           />
           <InfoCard
@@ -108,8 +115,10 @@
 </template>
 
 <script setup lang="ts">
+import ButtonSecondary from '~/components/Atoms/ButtonSecondary.vue'
 import SectionTitle from '~/components/Atoms/SectionTitle.vue'
 import InfoCard from '~/components/Molecules/InfoCard.vue'
+import TikTokEmbed from '~/components/Molecules/TikTokEmbed.vue'
 import CTASection from '~/components/Organisms/CTASection.vue'
 import { siteContent } from '~/data/siteContent'
 

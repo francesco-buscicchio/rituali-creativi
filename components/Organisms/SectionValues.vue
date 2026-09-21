@@ -2,7 +2,7 @@
   <section class="section-padding">
     <div class="site-container">
       <SectionTitle
-        eyebrow="Valori"
+        eyebrow="I valori"
         title="Un modo più gentile di stare nel fare"
         text="Ogni incontro tiene insieme apprendimento, ascolto e manualità. Non serve fare bene, serve sentirsi a proprio agio."
         align="center"

@@ -2,34 +2,47 @@
   <div>
     <section class="section-padding border-b border-ink/10 bg-linen/34">
       <div
-        class="site-container grid gap-10 lg:grid-cols-[.9fr_1.1fr] lg:items-start"
+        class="site-container grid gap-10 lg:grid-cols-[.9fr_1.1fr] lg:items-center"
       >
         <div>
-          <SectionTitle
-            eyebrow="Contatti"
-            title="Scrivimi per incontri, creazioni o collaborazioni."
-            as="h1"
-          />
-          <div class="mt-8 grid gap-3 max-w-96">
-            <SocialLinkItem
-              v-for="social in siteContent.socials"
-              :key="social.href"
-              :href="social.href"
-              :label="social.label"
-              :handle="social.handle"
-              :icon="social.icon"
-            />
-          </div>
+          <h1 class="eyebrow">Contatti</h1>
+          <figure
+            class="mt-6 overflow-hidden rounded-[2rem] border border-ink/10 shadow-soft"
+          >
+            <img
+              src="/contatti/DSCF0004.JPG"
+              alt="Top e borse all’uncinetto fatti a mano, indossati davanti al mare"
+              class="aspect-[4/5] w-full object-cover object-center"
+              decoding="async"
+            >
+          </figure>
         </div>
 
-        <WhatsAppContactCard />
+        <div class="grid gap-6">
+          <WhatsAppContactCard />
+
+          <div
+            class="rounded-[2rem] border border-ink/10 bg-white/62 p-5 shadow-soft sm:p-7"
+          >
+            <p class="eyebrow">Social</p>
+            <div class="mt-5 flex flex-wrap gap-3">
+              <SocialLinkItem
+                v-for="social in siteContent.socials"
+                :key="social.href"
+                :href="social.href"
+                :label="social.label"
+                :handle="social.handle"
+                :icon="social.icon"
+              />
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   </div>
 </template>
 
 <script setup lang="ts">
-import SectionTitle from "~/components/Atoms/SectionTitle.vue";
 import SocialLinkItem from "~/components/Molecules/SocialLinkItem.vue";
 import WhatsAppContactCard from "~/components/Organisms/WhatsAppContactCard.vue";
 import { siteContent } from "~/data/siteContent";
