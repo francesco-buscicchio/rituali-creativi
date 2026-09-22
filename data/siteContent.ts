@@ -7,8 +7,8 @@ export const siteContent = {
   navigation: [
     { label: "Home", to: "/" },
     { label: "Il progetto", to: "/il-progetto" },
-    // { label: 'Incontri', to: '/incontri' },
-    { label: "Creazioni", to: "/creazioni" },
+    { label: 'Incontri', to: '/incontri' },
+    // { label: "Creazioni", to: "/creazioni" },
     { label: "FAQ", to: "/faq" },
     { label: "Contatti", to: "/contatti" },
   ],
@@ -40,6 +40,10 @@ export const siteContent = {
     rituali: {
       title: "Cosa sono i rituali creativi",
       text: "Sono momenti in cui imparare un gesto tessile, lasciarsi accompagnare dal ritmo delle mani e ritrovare presenza. Si lavora a piccoli passi, con materiali scelti e una guida vicina, dentro un ambiente tranquillo e non giudicante.",
+    },
+    project: {
+      eyebrow: "Il progetto",
+      title: "Un invito a tornare al ritmo delle mani",
     },
   },
   values: [
@@ -73,7 +77,7 @@ export const siteContent = {
     ],
   },
   course: {
-    title: "Primo ciclo di incontri",
+    title: "Prossimo ciclo di incontri",
     subtitle:
       "Più che un corso classico, è uno spazio semplice in cui imparare con calma, fare qualcosa con le mani e staccare davvero per un paio d’ore.",
     standardPrice: "100€",
@@ -105,8 +109,8 @@ export const siteContent = {
       { label: "Gruppo", value: "Piccolo" },
       { label: "Livello", value: "Principiante" },
       { label: "Materiali", value: "Inclusi" },
-      { label: "Prezzo standard", value: "100€" },
-      { label: "Primo ciclo", value: "75€" },
+     // { label: "Prezzo standard", value: "100€" },
+     // { label: "Prossimo ciclo", value: "75€" },
     ],
   },
   creations: {
@@ -204,7 +208,7 @@ export const siteContent = {
     meetings: {
       title: "Incontri di uncinetto",
       description:
-        "Piccoli gruppi di uncinetto per principianti: 4 incontri, materiali inclusi e prezzo promozionale per il primo ciclo.",
+        "Piccoli gruppi di uncinetto per principianti: 4 incontri, materiali inclusi e prezzo promozionale per il prossimo ciclo.",
     },
     creations: {
       title: "Creazioni handmade",

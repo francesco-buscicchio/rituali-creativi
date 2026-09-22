@@ -10,7 +10,7 @@
         />
         <figure class="overflow-hidden rounded-[2rem] border border-ink/10 shadow-soft">
           <img
-            src="/hero/DSCF0031.JPG"
+            src="/hero/DSCF0031_low.JPG"
             alt="Top e borsa all’uncinetto azzurri, con il lungomare sullo sfondo"
             class="aspect-[4/3] w-full object-cover object-[50%_35%] sm:aspect-[16/9]"
             decoding="async"

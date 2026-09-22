@@ -49,6 +49,15 @@
         :rows="5"
         :error="errors.message"
       />
+      <input
+        v-model="state.website"
+        type="text"
+        name="website"
+        tabindex="-1"
+        autocomplete="off"
+        aria-hidden="true"
+        class="hidden"
+      >
     </div>
 
     <div class="mt-6 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
@@ -87,7 +96,7 @@ const props = withDefaults(defineProps<{
 const isInterest = computed(() => props.variant === 'interest')
 const eyebrow = computed(() => isInterest.value ? 'Mi interessa' : 'Contatti')
 const title = computed(() =>
-  isInterest.value ? 'Vuoi partecipare al primo ciclo?' : 'Scrivimi con calma'
+  isInterest.value ? 'Vuoi partecipare al prossimo ciclo?' : 'Scrivimi con calma'
 )
 const intro = computed(() =>
   isInterest.value

@@ -2,7 +2,7 @@
   <section class="relative border-b border-ink/10 lg:flex lg:h-[calc(100vh_-_5rem)] lg:min-h-[640px] lg:max-h-[960px] lg:items-end lg:overflow-hidden">
     <div class="relative overflow-hidden bg-linen lg:absolute lg:inset-0">
       <img
-        src="/hero/DSCF0002.JPG"
+        src="/hero/DSCF0002_low.JPG"
         alt="Tre borse all’uncinetto, bianca, nera e lilla, tenute in mano davanti al mare"
         class="aspect-[4/3] w-full object-cover object-center sm:aspect-[16/9] lg:aspect-auto lg:h-full lg:object-[50%_75%]"
         fetchpriority="high"

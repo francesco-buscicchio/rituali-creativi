@@ -3,7 +3,7 @@
     <div class="site-container">
       <div class="grid gap-8 rounded-[2rem] border border-ink/10 bg-white/58 p-6 shadow-soft sm:p-8 lg:grid-cols-[1.1fr_.9fr] lg:p-10">
         <div>
-          <TagBadge>Primo ciclo</TagBadge>
+          <TagBadge>Prossimo ciclo</TagBadge>
           <h2 class="mt-5 font-serif text-4xl font-medium leading-tight text-ink text-balance sm:text-5xl">
             {{ siteContent.course.title }}
           </h2>
@@ -17,6 +17,7 @@
         </div>
 
         <div class="rounded-soft border border-ink/10 bg-cream/80 p-6">
+          <!--
           <div class="grid gap-4 sm:grid-cols-2">
             <div class="rounded-2xl bg-white/65 p-5 shadow-line">
               <p class="text-sm text-ink/54">Prezzo standard</p>
@@ -25,10 +26,11 @@
               </p>
             </div>
             <div class="rounded-2xl bg-terracotta p-5 text-white shadow-soft">
-              <p class="text-sm text-white/75">Primo ciclo</p>
+              <p class="text-sm text-white/75">Prossimo ciclo</p>
               <p class="mt-2 text-4xl font-semibold">{{ siteContent.course.launchPrice }}</p>
             </div>
           </div>
+          -->
           <dl class="mt-5 grid gap-3">
             <div
               v-for="item in highlightDetails"

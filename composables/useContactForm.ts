@@ -5,6 +5,7 @@ export interface ContactFormState {
   email: string
   reason: ContactReason | ''
   message: string
+  website: string
 }
 
 export interface ContactFormErrors {
@@ -24,7 +25,8 @@ export function useContactForm(options: {
     name: '',
     email: '',
     reason: options.defaultReason ?? '',
-    message: ''
+    message: '',
+    website: ''
   })
 
   const errors = reactive<ContactFormErrors>({})
@@ -67,6 +69,7 @@ export function useContactForm(options: {
     state.email = ''
     state.reason = options.defaultReason ?? ''
     state.message = ''
+    state.website = ''
   }
 
   const submit = async () => {
@@ -86,7 +89,8 @@ export function useContactForm(options: {
           name: state.name.trim(),
           email: state.email.trim(),
           reason: state.reason,
-          message: state.message.trim()
+          message: state.message.trim(),
+          website: state.website
         }
       })
 

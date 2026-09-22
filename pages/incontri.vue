@@ -17,7 +17,7 @@
         </div>
 
         <div class="rounded-[2rem] border border-ink/10 bg-white/62 p-6 shadow-soft">
-          <p class="eyebrow">Dettagli primo ciclo</p>
+          <p class="eyebrow">Dettagli prossimo ciclo</p>
           <dl class="mt-5 grid gap-4">
             <div
               v-for="item in siteContent.course.practicalDetails"
@@ -80,7 +80,7 @@
       <div class="site-container grid gap-10 lg:grid-cols-[.9fr_1.1fr] lg:items-start">
         <SectionTitle
           eyebrow="Richiedi info"
-          title="Lascia il tuo interesse per il primo ciclo"
+          title="Lascia il tuo interesse per il prossimo ciclo"
           text="Non è una prenotazione vincolante: serve solo a capire disponibilità, preferenze e prossime date."
         />
         <ContactForm variant="interest" />

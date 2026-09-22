@@ -2,17 +2,16 @@
   <div>
     <HeroHome />
 
-    <section class="section-padding">
+    <section class="section-padding border-b border-ink/10 bg-linen/36">
       <div
         class="site-container grid gap-10 lg:grid-cols-[.8fr_1.2fr] lg:items-start"
       >
         <div>
-          <TagBadge>Il progetto</TagBadge>
-          <h2
-            class="mt-5 font-serif text-4xl font-medium leading-tight text-ink text-balance sm:text-5xl"
-          >
-            Un invito a tornare al ritmo delle mani.
-          </h2>
+           <SectionTitle
+          :eyebrow="siteContent.home.project.eyebrow"
+          :title="siteContent.home.project.title"
+          text=""
+        />
         </div>
         <div class="space-y-6 text-lg leading-8 text-ink/72">
           <p>{{ siteContent.home.intro }}</p>
@@ -23,19 +22,10 @@
           </p>
         </div>
       </div>
-    </section>
 
-    <section class="section-padding border-y border-ink/10 bg-linen/36">
-      <div
-        class="site-container grid gap-10 lg:grid-cols-[1fr_.9fr] lg:items-center"
-      >
-        <SectionTitle
-          eyebrow="Rituali creativi"
-          :title="siteContent.home.rituali.title"
-          :text="siteContent.home.rituali.text"
-        />
+      <div class="site-container flex justify-center pt-16">
         <div
-          class="rounded-[2rem] border border-ink/10 bg-white/55 p-6 shadow-soft sm:p-8"
+          class="max-w-3xl rounded-[2rem] border border-ink/10 bg-white/55 p-6 text-center shadow-soft sm:p-8"
         >
           <p class="font-serif text-3xl font-medium leading-tight text-ink">
             “Non serve fare bene, serve sentirsi a proprio agio.”

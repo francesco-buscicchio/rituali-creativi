@@ -4,13 +4,13 @@
       <div
         class="site-container grid gap-10 lg:grid-cols-[.9fr_1.1fr] lg:items-center"
       >
-        <div>
-          <h1 class="eyebrow">Contatti</h1>
+        <div class="contents lg:block">
+          <h1 class="eyebrow -mb-4 lg:mb-0">Contatti</h1>
           <figure
-            class="mt-6 overflow-hidden rounded-[2rem] border border-ink/10 shadow-soft"
+            class="order-last overflow-hidden lg:order-none lg:mt-6 rounded-[2rem] border border-ink/10 shadow-soft"
           >
             <img
-              src="/contatti/DSCF0004.JPG"
+              src="/contatti/DSCF0004_low.JPG"
               alt="Top e borse all’uncinetto fatti a mano, indossati davanti al mare"
               class="aspect-[4/5] w-full object-cover object-center"
               decoding="async"
