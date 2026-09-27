@@ -1,6 +1,23 @@
-import { ADMIN_EMAIL, escapeHtml, sendMail } from '../utils/mailer'
+import {
+  emailButton,
+  emailDetails,
+  emailLink,
+  emailMessage,
+  emailNote,
+  emailParagraph,
+  emailSignature,
+  mailtoHref,
+  renderEmail
+} from '../utils/emailTemplate'
+import { escapeHtml, getAdminEmail, sendMail } from '../utils/mailer'
 
 const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+
+const dateFormatter = new Intl.DateTimeFormat('it-IT', {
+  dateStyle: 'long',
+  timeStyle: 'short',
+  timeZone: 'Europe/Rome'
+})
 
 export default defineEventHandler(async (event) => {
   const body = await readBody<{
@@ -34,30 +51,53 @@ export default defineEventHandler(async (event) => {
     })
   }
 
-  const safeName = escapeHtml(name)
-  const safeEmail = escapeHtml(email)
-  const safeMessage = escapeHtml(message).replace(/\n/g, '<br>')
+  const receivedAt = dateFormatter.format(new Date())
+  const adminSubject = `Nuova richiesta incontri da ${name}`
+  const userSubject = 'Abbiamo ricevuto la tua richiesta – Rituali Creativi'
 
   try {
     await sendMail({
-      to: ADMIN_EMAIL,
+      to: getAdminEmail(),
       replyTo: email,
-      subject: `Nuova richiesta incontri da ${name}`,
-      text: `Nuova richiesta dal form "Vuoi partecipare al prossimo ciclo?"\n\nNome: ${name}\nEmail: ${email}\n\nMessaggio:\n${message}`,
-      html: `<p>Nuova richiesta dal form <strong>Vuoi partecipare al prossimo ciclo?</strong></p>
-<p><strong>Nome:</strong> ${safeName}<br><strong>Email:</strong> <a href="mailto:${safeEmail}">${safeEmail}</a></p>
-<p><strong>Messaggio:</strong><br>${safeMessage}</p>`
+      subject: adminSubject,
+      text: `Nuova richiesta dal form "Vuoi partecipare al prossimo ciclo?"\n\nNome: ${name}\nEmail: ${email}\nRicevuta: ${receivedAt}\n\nMessaggio:\n${message}\n\nPuoi rispondere direttamente a questa email.`,
+      html: renderEmail({
+        title: adminSubject,
+        preheader: `${name}: ${message}`,
+        eyebrow: 'Pagina Incontri',
+        heading: `Nuova richiesta da ${name}`,
+        content: [
+          emailParagraph('È arrivato un nuovo messaggio dal form <strong>Vuoi partecipare al prossimo ciclo?</strong>'),
+          emailDetails([
+            { label: 'Nome', html: escapeHtml(name) },
+            { label: 'Email', html: emailLink(email, mailtoHref(email)) },
+            { label: 'Ricevuta', html: escapeHtml(receivedAt) }
+          ]),
+          emailMessage('Messaggio', message),
+          emailButton(`Rispondi a ${name}`, mailtoHref(email, 'Rituali Creativi – prossimi incontri')),
+          emailNote(`Oppure rispondi direttamente a questa email: la risposta arriverà a ${escapeHtml(email)}.`)
+        ],
+        footnote: 'Notifica automatica dal form della pagina Incontri.'
+      })
     })
 
     await sendMail({
       to: email,
-      replyTo: ADMIN_EMAIL,
-      subject: 'Abbiamo ricevuto la tua richiesta – Rituali Creativi',
+      replyTo: getAdminEmail(),
+      subject: userSubject,
       text: `Ciao ${name},\n\ngrazie per il tuo interesse verso i prossimi incontri di Rituali Creativi. Ho ricevuto la tua richiesta e ti risponderò al più presto con disponibilità, luogo e prossime date.\n\nIl tuo messaggio:\n${message}\n\nA presto,\nRituali Creativi`,
-      html: `<p>Ciao ${safeName},</p>
-<p>grazie per il tuo interesse verso i prossimi incontri di Rituali Creativi. Ho ricevuto la tua richiesta e ti risponderò al più presto con disponibilità, luogo e prossime date.</p>
-<p><strong>Il tuo messaggio:</strong><br>${safeMessage}</p>
-<p>A presto,<br>Rituali Creativi</p>`
+      html: renderEmail({
+        title: userSubject,
+        preheader: 'Grazie per il tuo interesse: ti risponderò al più presto con disponibilità, luogo e prossime date.',
+        eyebrow: 'Richiesta ricevuta',
+        heading: `Ciao ${name},`,
+        content: [
+          emailParagraph('grazie per il tuo interesse verso i prossimi incontri di Rituali Creativi. Ho ricevuto la tua richiesta e ti risponderò al più presto con disponibilità, luogo e prossime date.'),
+          emailMessage('Il tuo messaggio', message),
+          emailSignature('A presto,', 'Rituali Creativi')
+        ],
+        footnote: 'Hai ricevuto questa email perché hai compilato il form nella pagina Incontri di ritualicreativi.it.'
+      })
     })
   } catch (error) {
     console.error('[interest] invio email fallito', error)
