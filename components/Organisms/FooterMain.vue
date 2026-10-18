@@ -3,14 +3,14 @@
     <div class="site-container grid gap-10 py-12 lg:grid-cols-[1.2fr_1fr_1fr]">
       <div>
         <NuxtLink to="/" class="font-serif text-3xl font-medium text-ink">
-          {{ siteContent.brand.name }}
+          {{ t('brand.name') }}
         </NuxtLink>
-        <p class="mt-4 max-w-md leading-7 text-ink/68">{{ siteContent.brand.payoff }}</p>
-        <p class="mt-6 text-sm text-ink/52">{{ siteContent.brand.footerNote }}</p>
+        <p class="mt-4 max-w-md leading-7 text-ink/68">{{ t('brand.payoff') }}</p>
+        <p class="mt-6 text-sm text-ink/52">{{ t('brand.footerNote') }}</p>
       </div>
 
       <nav aria-label="Navigazione secondaria">
-        <p class="text-sm font-semibold uppercase tracking-[0.16em] text-clay">Pagine</p>
+        <p class="text-sm font-semibold uppercase tracking-[0.16em] text-clay">{{ t('footer.pagesTitle') }}</p>
         <div class="mt-4 grid gap-3">
           <NuxtLink
             v-for="item in siteContent.navigation"
@@ -18,32 +18,35 @@
             :to="item.to"
             class="text-sm text-ink/68 transition hover:text-ink"
           >
-            {{ item.label }}
+            {{ t(navKey(item.to)) }}
           </NuxtLink>
         </div>
       </nav>
 
       <div>
-        <p class="text-sm font-semibold uppercase tracking-[0.16em] text-clay">Social</p>
+        <p class="text-sm font-semibold uppercase tracking-[0.16em] text-clay">{{ t('footer.socialTitle') }}</p>
         <div class="mt-4 grid gap-3">
           <SocialLinkItem
             v-for="social in siteContent.socials"
             :key="social.href"
-            :href="social.href"
+            :href="t(`${socialKey(social.label)}.url`)"
             :label="social.label"
-            :handle="social.handle"
+            :handle="t(`${socialKey(social.label)}.handle`)"
             :icon="social.icon"
           />
         </div>
       </div>
     </div>
     <div class="site-container border-t border-ink/10 py-5 text-sm text-ink/52">
-      © {{ new Date().getFullYear() }} {{ siteContent.brand.name }}. Tutti i diritti riservati.
+      © {{ new Date().getFullYear() }} {{ t('brand.name') }}. {{ t('footer.copyright') }}
     </div>
   </footer>
 </template>
 
 <script setup lang="ts">
 import SocialLinkItem from '~/components/Molecules/SocialLinkItem.vue'
+import { navKey, socialKey } from '~/data/contentSchema'
 import { siteContent } from '~/data/siteContent'
+
+const { t } = useContent()
 </script>

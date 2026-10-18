@@ -3,15 +3,15 @@
     <section class="section-padding border-b border-ink/10 bg-linen/34">
       <div class="site-container grid gap-10 lg:grid-cols-[1fr_.9fr] lg:items-end">
         <SectionTitle
-          eyebrow="Creazioni handmade"
-          title="Borse e oggetti tessili fatti con calma."
-          :text="siteContent.creations.intro"
+          :eyebrow="t('creazioni.eyebrow')"
+          :title="t('creazioni.title')"
+          :text="t('creazioni.intro')"
           as="h1"
         />
         <figure class="overflow-hidden rounded-[2rem] border border-ink/10 bg-white/58 shadow-soft">
           <img
-            src="/images/creazioni-borse-handmade.jpg"
-            alt="Borse handmade all'uncinetto indossate davanti al mare"
+            :src="t('creazioni.image')"
+            :alt="t('creazioni.imageAlt')"
             class="aspect-[16/10] h-full w-full object-cover object-[50%_42%]"
           >
         </figure>
@@ -22,24 +22,24 @@
       <div class="site-container">
         <div class="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
           <ProductCard
-            v-for="product in siteContent.creations.products"
-            :key="product.title"
+            v-for="(product, index) in products"
+            :key="index"
             :title="product.title"
             :category="product.category"
             :text="product.text"
-            :palette="product.palette"
+            :palette="siteContent.creations.products[index % siteContent.creations.products.length].palette"
           />
         </div>
       </div>
     </section>
 
     <CTASection
-      eyebrow="Custom order"
-      title="Hai in mente un colore, una misura o un oggetto specifico?"
-      text="Puoi scrivere per capire insieme se è possibile realizzare un pezzo su richiesta, con tempi e dettagli chiari fin dall’inizio."
-      primary-label="Richiedi informazioni"
+      :eyebrow="t('creazioni.cta.eyebrow')"
+      :title="t('creazioni.cta.title')"
+      :text="t('creazioni.cta.text')"
+      :primary-label="t('creazioni.cta.primary')"
       primary-to="/contatti"
-      secondary-label="Scopri il progetto"
+      :secondary-label="t('creazioni.cta.secondary')"
       secondary-to="/il-progetto"
     />
   </div>
@@ -51,10 +51,13 @@ import ProductCard from '~/components/Molecules/ProductCard.vue'
 import CTASection from '~/components/Organisms/CTASection.vue'
 import { siteContent } from '~/data/siteContent'
 
+const { t, list } = useContent()
+const products = computed(() => list<{ title: string; category: string; text: string }>('creazioni.products'))
+
 useSeoMeta({
-  title: siteContent.seo.creations.title,
-  description: siteContent.seo.creations.description,
-  ogTitle: siteContent.seo.creations.title,
-  ogDescription: siteContent.seo.creations.description
+  title: () => t('seo.creations.title'),
+  description: () => t('seo.creations.description'),
+  ogTitle: () => t('seo.creations.title'),
+  ogDescription: () => t('seo.creations.description')
 })
 </script>

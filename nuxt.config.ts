@@ -27,6 +27,11 @@ export default defineNuxtConfig({
       ]
     }
   },
+  routeRules: {
+    // pannello raggiungibile solo dall'indirizzo, mai indicizzato
+    '/admin': { ssr: false, headers: { 'X-Robots-Tag': 'noindex, nofollow' } },
+    '/api/admin/**': { headers: { 'Cache-Control': 'no-store', 'X-Robots-Tag': 'noindex, nofollow' } }
+  },
   typescript: {
     strict: true,
     typeCheck: true

@@ -6,21 +6,21 @@
         <div class="absolute bottom-10 right-0 h-36 w-36 rounded-full bg-powder/50 sm:h-44 sm:w-44" />
         <div class="absolute left-1/2 top-1/2 h-48 w-48 -translate-x-1/2 -translate-y-1/2 rounded-full border-[16px] border-linen/75 sm:h-60 sm:w-60" />
         <img
-          src="/images/small-groups-borsa-handmade.jpg"
-          alt="Borsa realizzata a mano tenuta in alto su sfondo azzurro"
+          :src="t('home.groups.image')"
+          :alt="t('home.groups.imageAlt')"
           class="relative z-10 mx-auto aspect-[4/5] w-[84%] rounded-[1.75rem] object-cover object-[54%_42%] shadow-soft"
         />
       </div>
 
       <div>
         <SectionTitle
-          eyebrow="Atmosfera"
-          :title="siteContent.smallGroups.title"
-          :text="siteContent.smallGroups.text"
+          :eyebrow="t('home.groups.eyebrow')"
+          :title="t('home.groups.title')"
+          :text="t('home.groups.text')"
         />
         <div class="mt-8 flex flex-wrap gap-3">
-          <TagBadge v-for="point in siteContent.smallGroups.points" :key="point">
-            {{ point }}
+          <TagBadge v-for="(point, index) in points" :key="index">
+            {{ point.label }}
           </TagBadge>
         </div>
       </div>
@@ -31,5 +31,7 @@
 <script setup lang="ts">
 import SectionTitle from '~/components/Atoms/SectionTitle.vue'
 import TagBadge from '~/components/Atoms/TagBadge.vue'
-import { siteContent } from '~/data/siteContent'
+
+const { t, list } = useContent()
+const points = computed(() => list<{ label: string }>('home.groups.points'))
 </script>

@@ -57,3 +57,37 @@
     background-size: auto, auto, auto, auto, 22px 22px, 22px 22px;
   }
 }
+
+/* Pannello di amministrazione (/admin) */
+@layer components {
+  .admin-input {
+    @apply block w-full rounded-xl border border-ink/15 bg-cream/40 px-3.5 py-2.5 text-[15px] text-ink outline-none transition placeholder:text-ink/40 focus:border-terracotta focus:bg-white focus:ring-2 focus:ring-terracotta/20;
+  }
+
+  .admin-input-changed {
+    @apply border-terracotta/50 bg-white;
+  }
+
+  .admin-button-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-full bg-terracotta px-4 py-2 text-sm font-semibold text-white transition hover:bg-clay disabled:cursor-not-allowed disabled:opacity-50;
+  }
+
+  .admin-button-secondary {
+    @apply inline-flex items-center justify-center gap-2 rounded-full border border-ink/15 bg-white px-4 py-2 text-sm font-semibold text-ink transition hover:border-ink/30 disabled:cursor-not-allowed disabled:opacity-50;
+  }
+
+  .admin-icon-button {
+    @apply inline-flex h-8 w-8 items-center justify-center rounded-full border border-ink/10 bg-white text-ink/70 transition hover:border-ink/30 hover:text-ink disabled:cursor-not-allowed disabled:opacity-30;
+  }
+
+  .admin-checker {
+    background-color: #fff;
+    background-image:
+      linear-gradient(45deg, rgba(58, 51, 46, 0.06) 25%, transparent 25%),
+      linear-gradient(-45deg, rgba(58, 51, 46, 0.06) 25%, transparent 25%),
+      linear-gradient(45deg, transparent 75%, rgba(58, 51, 46, 0.06) 75%),
+      linear-gradient(-45deg, transparent 75%, rgba(58, 51, 46, 0.06) 75%);
+    background-size: 20px 20px;
+    background-position: 0 0, 0 10px, 10px -10px, -10px 0;
+  }
+}

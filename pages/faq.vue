@@ -3,9 +3,9 @@
     <section class="section-padding border-b border-ink/10 bg-linen/34">
       <div class="site-container">
         <SectionTitle
-          eyebrow="FAQ"
-          title="Domande frequenti"
-          text="Le informazioni più utili su incontri, materiali, piccoli gruppi, costi e contatti."
+          :eyebrow="t('faq.hero.eyebrow')"
+          :title="t('faq.hero.title')"
+          :text="t('faq.hero.text')"
           as="h1"
           align="center"
         />
@@ -14,17 +14,17 @@
 
     <section class="section-padding">
       <div class="site-container max-w-4xl">
-        <FaqAccordion :items="siteContent.faq" />
+        <FaqAccordion :items="faqItems" />
       </div>
     </section>
 
     <CTASection
-      eyebrow="Hai ancora dubbi?"
-      title="Puoi scrivermi anche solo per capire se fa per te."
-      text="Non serve avere già un’idea precisa: raccontami cosa cerchi e ti risponderò con le informazioni più adatte."
-      primary-label="Scrivimi"
+      :eyebrow="t('faq.cta.eyebrow')"
+      :title="t('faq.cta.title')"
+      :text="t('faq.cta.text')"
+      :primary-label="t('faq.cta.primary')"
       primary-to="/contatti"
-      secondary-label="Scopri gli incontri"
+      :secondary-label="t('faq.cta.secondary')"
       secondary-to="/incontri"
     />
   </div>
@@ -34,12 +34,14 @@
 import SectionTitle from '~/components/Atoms/SectionTitle.vue'
 import CTASection from '~/components/Organisms/CTASection.vue'
 import FaqAccordion from '~/components/Organisms/FaqAccordion.vue'
-import { siteContent } from '~/data/siteContent'
+
+const { t, list } = useContent()
+const faqItems = computed(() => list<{ question: string; answer: string }>('faq.items'))
 
 useSeoMeta({
-  title: siteContent.seo.faq.title,
-  description: siteContent.seo.faq.description,
-  ogTitle: siteContent.seo.faq.title,
-  ogDescription: siteContent.seo.faq.description
+  title: () => t('seo.faq.title'),
+  description: () => t('seo.faq.description'),
+  ogTitle: () => t('seo.faq.title'),
+  ogDescription: () => t('seo.faq.description')
 })
 </script>

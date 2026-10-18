@@ -3,25 +3,25 @@
     <div class="site-container flex min-h-20 items-center justify-between gap-4">
       <NuxtLink to="/" class="group inline-flex items-center gap-3" aria-label="Vai alla home">
         <img
-          src="/logo-rituali-creativi.png"
+          :src="t('brand.logo')"
           alt=""
           class="h-10 w-10 shrink-0 rounded-full object-contain transition group-hover:scale-105"
           aria-hidden="true"
         >
-        <span class="font-serif text-2xl font-medium text-ink">{{ siteContent.brand.name }}</span>
+        <span class="font-serif text-2xl font-medium text-ink">{{ t('brand.name') }}</span>
       </NuxtLink>
 
       <nav class="hidden items-center gap-1 lg:flex" aria-label="Navigazione principale">
         <NavLink
           v-for="item in siteContent.navigation"
           :key="item.to"
-          :label="item.label"
+          :label="t(navKey(item.to))"
           :to="item.to"
         />
       </nav>
 
       <div class="hidden lg:block">
-        <ButtonPrimary to="/contatti" icon="lucide:send">Richiedi info</ButtonPrimary>
+        <ButtonPrimary to="/contatti" icon="lucide:send">{{ t('header.cta') }}</ButtonPrimary>
       </div>
 
       <button
@@ -54,12 +54,12 @@
           <NavLink
             v-for="item in siteContent.navigation"
             :key="item.to"
-            :label="item.label"
+            :label="t(navKey(item.to))"
             :to="item.to"
             @navigate="menuOpen = false"
           />
           <ButtonPrimary to="/contatti" icon="lucide:send" @click="menuOpen = false">
-            Richiedi info
+            {{ t('header.cta') }}
           </ButtonPrimary>
         </div>
       </nav>
@@ -70,7 +70,10 @@
 <script setup lang="ts">
 import ButtonPrimary from '~/components/Atoms/ButtonPrimary.vue'
 import NavLink from '~/components/Molecules/NavLink.vue'
+import { navKey } from '~/data/contentSchema'
 import { siteContent } from '~/data/siteContent'
+
+const { t } = useContent()
 
 const menuOpen = ref(false)
 const route = useRoute()

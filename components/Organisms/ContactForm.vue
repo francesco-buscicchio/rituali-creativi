@@ -42,7 +42,7 @@
       />
       <TextareaField
         v-model="state.message"
-        :label="variant === 'interest' ? 'Cosa ti piacerebbe sapere?' : 'Messaggio'"
+        :label="messageLabel"
         name="message"
         :placeholder="messagePlaceholder"
         required
@@ -93,23 +93,27 @@ const props = withDefaults(defineProps<{
   variant: 'contact'
 })
 
+const { t } = useContent()
 const isInterest = computed(() => props.variant === 'interest')
-const eyebrow = computed(() => isInterest.value ? 'Mi interessa' : 'Contatti')
+const eyebrow = computed(() => isInterest.value ? t('incontri.form.eyebrow') : 'Contatti')
 const title = computed(() =>
-  isInterest.value ? 'Vuoi partecipare al prossimo ciclo?' : 'Scrivimi con calma'
+  isInterest.value ? t('incontri.form.title') : 'Scrivimi con calma'
 )
 const intro = computed(() =>
   isInterest.value
-    ? 'Lascia i tuoi dati e una breve nota. Ti risponderò con disponibilità, luogo e prossime date.'
+    ? t('incontri.form.intro')
     : 'Per incontri, creazioni su richiesta o collaborazioni, puoi usare questo spazio. Rispondo appena possibile.'
+)
+const messageLabel = computed(() =>
+  isInterest.value ? t('incontri.form.messageLabel') : 'Messaggio'
 )
 const messagePlaceholder = computed(() =>
   isInterest.value
-    ? 'Raccontami se parti da zero, che giorni preferisci o cosa vorresti chiarire.'
+    ? t('incontri.form.messagePlaceholder')
     : 'Scrivi qui il tuo messaggio.'
 )
 const buttonLabel = computed(() =>
-  isInterest.value ? 'Richiedi informazioni' : 'Invia messaggio'
+  isInterest.value ? t('incontri.form.button') : 'Invia messaggio'
 )
 
 const { state, errors, status, serverMessage, submit } = useContactForm({

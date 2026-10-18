@@ -2,19 +2,19 @@
   <section class="section-padding">
     <div class="site-container">
       <SectionTitle
-        eyebrow="I valori"
-        title="Un modo più gentile di stare nel fare"
-        text="Ogni incontro tiene insieme apprendimento, ascolto e manualità. Non serve fare bene, serve sentirsi a proprio agio."
+        :eyebrow="t('home.values.eyebrow')"
+        :title="t('home.values.title')"
+        :text="t('home.values.text')"
         align="center"
       />
       <div class="mt-12 grid gap-5 md:grid-cols-3">
         <ValueCard
-          v-for="value in siteContent.values"
-          :key="value.title"
+          v-for="(value, index) in values"
+          :key="index"
           :title="value.title"
           :text="value.text"
-          :icon="value.icon"
-          :accent="value.accent"
+          :icon="siteContent.values[index % siteContent.values.length].icon"
+          :accent="siteContent.values[index % siteContent.values.length].accent"
         />
       </div>
     </div>
@@ -25,4 +25,7 @@
 import SectionTitle from '~/components/Atoms/SectionTitle.vue'
 import ValueCard from '~/components/Molecules/ValueCard.vue'
 import { siteContent } from '~/data/siteContent'
+
+const { t, list } = useContent()
+const values = computed(() => list<{ title: string; text: string }>('home.values.items'))
 </script>
