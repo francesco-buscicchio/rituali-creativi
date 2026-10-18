@@ -30,7 +30,6 @@ logs
 .env
 .env.*
 !.env.example
-package-lock.json
 
 # Service account keys
 *service-account*.json
